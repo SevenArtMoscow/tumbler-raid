@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAID — компьютерный клуб · запись на ПК</title>
+  <meta name="description" content="RAID — 24 станции, бронь по минутам. Москва. Демо-кейс TUMBLER." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..125,500;700;800;900&family=Fragment+Mono:wght@400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#book">К записи</a>
+
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <a class="logo" href="#">RAID</a>
+    <nav class="nav" aria-label="Основная">
+      <a href="#board">Табло</a>
+      <a href="#floor">Зал</a>
+      <a href="#rates">Тарифы</a>
+    </nav>
+    <a class="btn btn-sm" href="#book">Запись</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Главный экран">
+      <div class="hero-heat" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="logo hero-brand">RAID</p>
+        <h1>Двадцать четыре<br />станции. Ноль очередей.</h1>
+        <p class="lede">Компьютерный клуб с живым табло свободных ПК. Выбираешь станцию — бронируешь слот — приходишь играть.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#book">Записаться на ПК</a>
+          <a class="link-quiet" href="#floor">Схема зала</a>
+        </div>
+      </div>
+      <aside class="hero-board" aria-label="Свободно сейчас">
+        <div class="board-head">
+          <span class="board-live"></span>
+          <span>LIVE · FREE</span>
+        </div>
+        <p class="board-count" id="freeCount">18</p>
+        <p class="board-label">станций свободно</p>
+        <ul class="board-ticker" id="ticker" aria-hidden="true"></ul>
+      </aside>
+    </section>
+
+    <section class="strip" aria-hidden="true">
+      <div class="marquee">
+        <span>PC · CONSOLE · VIP · TOURNAMENT · PC · CONSOLE · VIP · TOURNAMENT · </span>
+        <span>PC · CONSOLE · VIP · TOURNAMENT · PC · CONSOLE · VIP · TOURNAMENT · </span>
+      </div>
+    </section>
+
+    <section id="board" class="solari">
+      <div class="section-head">
+        <h2>Табло станций</h2>
+        <p>Как в аэропорту — только вместо рейсов твой слот. Зелёный = свободен, красный = занят.</p>
+      </div>
+      <div class="flaps" id="flaps" role="list"></div>
+    </section>
+
+    <section id="floor" class="floor">
+      <div class="floor-copy">
+        <h2>Схема зала</h2>
+        <p>Кликни станцию — она попадёт в форму записи. VIP-ряд у стены, обычные — в центре, console — у окна.</p>
+        <div class="legend">
+          <span><i class="dot free"></i> Свободно</span>
+          <span><i class="dot busy"></i> Занято</span>
+          <span><i class="dot vip"></i> VIP</span>
+          <span><i class="dot selected"></i> Выбрано</span>
+        </div>
+      </div>
+      <div class="grid-wrap">
+        <div class="station-grid" id="stationGrid" role="listbox" aria-label="Станции"></div>
+      </div>
+    </section>
+
+    <section id="rates" class="rates">
+      <div class="section-head">
+        <h2>Тарифы</h2>
+        <p>Цена за час. Ночной пакет с 00:00 до 08:00 — дешевле.</p>
+      </div>
+      <div class="rate-rows">
+        <div class="rate-row">
+          <span class="rate-name">Standard PC</span>
+          <span class="rate-spec">RTX 4070 · 240 Hz</span>
+          <span class="rate-price">180 ₽/ч</span>
+        </div>
+        <div class="rate-row">
+          <span class="rate-name">VIP Booth</span>
+          <span class="rate-spec">RTX 4080 · приват</span>
+          <span class="rate-price">320 ₽/ч</span>
+        </div>
+        <div class="rate-row">
+          <span class="rate-name">Console</span>
+          <span class="rate-spec">PS5 / Series X</span>
+          <span class="rate-price">220 ₽/ч</span>
+        </div>
+        <div class="rate-row night">
+          <span class="rate-name">Night Raid</span>
+          <span class="rate-spec">00:00–08:00 · любой ПК</span>
+          <span class="rate-price">990 ₽</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="book">
+      <div class="book-copy">
+        <h2>Запись</h2>
+        <p>Выбери станцию на схеме или укажи вручную. Мы напишем в Telegram для подтверждения.</p>
+        <p class="picked" id="pickedLabel">Станция не выбрана</p>
+      </div>
+      <form class="book-form" id="bookForm" novalidate>
+        <label>
+          <span>Имя</span>
+          <input type="text" name="name" required autocomplete="name" placeholder="Как к тебе обращаться" />
+        </label>
+        <label>
+          <span>Telegram</span>
+          <input type="text" name="tg" required placeholder="@username" />
+        </label>
+        <label>
+          <span>Дата</span>
+          <input type="date" name="date" required />
+        </label>
+        <label>
+          <span>Время</span>
+          <input type="time" name="time" required value="18:00" />
+        </label>
+        <label>
+          <span>Часов</span>
+          <select name="hours" required>
+            <option value="1">1 час</option>
+            <option value="2" selected>2 часа</option>
+            <option value="3">3 часа</option>
+            <option value="5">5 часов</option>
+            <option value="night">Night Raid</option>
+          </select>
+        </label>
+        <label>
+          <span>Станция</span>
+          <input type="text" name="station" id="stationInput" readonly placeholder="Кликни на схеме" />
+        </label>
+        <button class="btn btn-block" type="submit">Отправить заявку</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="logo">RAID</p>
+    <p>Демо-кейс для портфолио TUMBLER · не действующий клуб</p>
+    <a href="https://t.me/life_slow" target="_blank" rel="noopener">@life_slow</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
