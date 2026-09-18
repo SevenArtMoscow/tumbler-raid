@@ -4,17 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RAID Arena — киберспортивный клуб в Москве</title>
-  <meta name="description" content="RAID Arena — компьютерный клуб в Москве. 24 ПК, VIP, консоли. Онлайн-бронь, живое табло, калькулятор. Демо TUMBLER." />
+  <meta name="description" content="RAID Arena — компьютерный клуб в Москве. 24 ПК, VIP, консоли. Бронь онлайн. Демо-кейс TUMBLER." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip" href="#book">К бронированию</a>
-  <div class="cursor" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
 
   <header class="header">
     <a class="logo" href="#">
@@ -23,16 +20,10 @@
     </a>
     <nav class="nav" aria-label="Основная">
       <a href="#zones">Зоны</a>
-      <a href="#map">Места</a>
       <a href="#hall">Зал</a>
-      <a href="#gear">Железо</a>
       <a href="#rates">Тарифы</a>
       <a href="#book">Бронь</a>
     </nav>
-    <div class="header-live" aria-live="polite">
-      <span class="pulse"></span>
-      <span><b id="freeLive">18</b> свободно</span>
-    </div>
     <a class="btn btn-accent" href="#book">Забронировать</a>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false">
       <span></span><span></span>
@@ -41,16 +32,14 @@
 
   <div class="mobile-nav" hidden>
     <a href="#zones">Зоны</a>
-    <a href="#map">Места</a>
     <a href="#hall">Зал</a>
-    <a href="#gear">Железо</a>
     <a href="#rates">Тарифы</a>
     <a href="#book">Бронь</a>
   </div>
 
   <main>
     <section class="hero">
-      <div class="hero-media" data-parallax>
+      <div class="hero-media">
         <img
           src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1920&q=80"
           alt="Игроки за мониторами в киберспортивном зале"
@@ -64,31 +53,19 @@
         <h1>Игра начинается<br />в <span>RAID Arena</span></h1>
         <p class="hero-lead">Киберспортивный клуб с топовым железом, быстрым интернетом и онлайн-бронью места. Приходи один или с командой.</p>
         <div class="hero-cta">
-          <a class="btn btn-accent btn-lg magnetic" href="#book">Забронировать ПК</a>
-          <a class="btn btn-ghost btn-lg" href="#map">Выбрать место на схеме</a>
-        </div>
-        <div class="hero-chips">
-          <span>RTX 40-series</span>
-          <span>240–360 Hz</span>
-          <span>1 Гбит</span>
-          <span>24/7</span>
-        </div>
-      </div>
-      <div class="hero-float" aria-hidden="true">
-        <div class="float-card">
-          <span>Сейчас в зале</span>
-          <strong id="onlineNow">42</strong>
+          <a class="btn btn-accent btn-lg" href="#book">Забронировать ПК</a>
+          <a class="btn btn-ghost btn-lg" href="#hall">Смотреть зал</a>
         </div>
       </div>
     </section>
 
     <section class="stats" aria-label="Цифры клуба">
       <div class="stat">
-        <strong data-count="24">0</strong>
+        <strong>24</strong>
         <span>игровых станций</span>
       </div>
       <div class="stat">
-        <strong data-count="1" data-suffix=" Гбит">0</strong>
+        <strong>1 Гбит</strong>
         <span>канал в зал</span>
       </div>
       <div class="stat">
@@ -96,18 +73,18 @@
         <span>работаем без выходных</span>
       </div>
       <div class="stat">
-        <strong data-count="40" data-prefix="RTX ">0</strong>
+        <strong>RTX 40</strong>
         <span>серия на всех ПК</span>
       </div>
     </section>
 
     <section id="zones" class="zones">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Зоны клуба</h2>
         <p>Выбери формат под задачу — от соло-рейда до приватной кабины.</p>
       </div>
       <div class="zone-grid">
-        <article class="zone reveal">
+        <article class="zone">
           <div class="zone-photo">
             <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80" alt="Основной зал с игровыми ПК" width="900" height="600" loading="lazy" />
           </div>
@@ -120,7 +97,7 @@
             </ul>
           </div>
         </article>
-        <article class="zone reveal">
+        <article class="zone">
           <div class="zone-photo">
             <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80" alt="VIP-зона компьютерного клуба" width="900" height="600" loading="lazy" />
           </div>
@@ -133,7 +110,7 @@
             </ul>
           </div>
         </article>
-        <article class="zone reveal">
+        <article class="zone">
           <div class="zone-photo">
             <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=900&q=80" alt="Игровая консоль и геймпад" width="900" height="600" loading="lazy" />
           </div>
@@ -149,96 +126,32 @@
       </div>
     </section>
 
-    <section id="map" class="map-section">
-      <div class="section-head reveal">
-        <h2>Живая схема зала</h2>
-        <p>Кликни свободное место — оно сразу попадёт в бронь. Занятые подсвечены красным.</p>
-      </div>
-      <div class="map-layout reveal">
-        <div class="map-panel">
-          <div class="map-toolbar">
-            <div class="legend">
-              <span><i class="dot free"></i> Свободно</span>
-              <span><i class="dot busy"></i> Занято</span>
-              <span><i class="dot vip"></i> VIP</span>
-              <span><i class="dot pick"></i> Выбрано</span>
-            </div>
-            <p class="map-picked" id="mapPicked">Место не выбрано</p>
-          </div>
-          <div class="seat-map" id="seatMap" role="listbox" aria-label="Схема мест"></div>
-        </div>
-        <aside class="map-side">
-          <h3>Слоты на сегодня</h3>
-          <p class="map-side-note">Выбери час старта — калькулятор пересчитает сумму.</p>
-          <div class="slots" id="timeSlots" role="listbox" aria-label="Временные слоты"></div>
-          <div class="calc">
-            <div class="calc-row"><span>Место</span><b id="calcSeat">—</b></div>
-            <div class="calc-row"><span>Зона</span><b id="calcZone">—</b></div>
-            <div class="calc-row"><span>Старт</span><b id="calcTime">—</b></div>
-            <div class="calc-row"><span>Длительность</span>
-              <select id="calcHours" aria-label="Длительность">
-                <option value="1">1 ч</option>
-                <option value="2" selected>2 ч</option>
-                <option value="3">3 ч</option>
-                <option value="5">5 ч</option>
-                <option value="night">Ночь</option>
-              </select>
-            </div>
-            <div class="calc-total"><span>Итого</span><strong id="calcTotal">0 ₽</strong></div>
-            <a class="btn btn-accent btn-block magnetic" href="#book" id="toBook">В форму брони</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
     <section id="hall" class="hall">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Как выглядит зал</h2>
-        <p>Кликни фото — откроется на весь экран.</p>
+        <p>Реальные кадры атмосферы киберклуба — так примерно выглядит RAID Arena.</p>
       </div>
-      <div class="hall-mosaic reveal">
-        <figure class="hall-big" data-lightbox>
+      <div class="hall-mosaic">
+        <figure class="hall-big">
           <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80" alt="Ряд игроков в киберарене" width="1400" height="900" loading="lazy" />
         </figure>
-        <figure data-lightbox>
+        <figure>
           <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=800&q=80" alt="Игровой сетап крупным планом" width="800" height="600" loading="lazy" />
         </figure>
-        <figure data-lightbox>
+        <figure>
           <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80" alt="Компьютерный клуб вечером" width="800" height="600" loading="lazy" />
         </figure>
       </div>
     </section>
 
-    <section id="gear" class="gear">
-      <div class="section-head reveal">
-        <h2>Железо</h2>
-        <p>Переключай конфигурации — видно, за что платишь в каждой зоне.</p>
-      </div>
-      <div class="gear-tabs reveal" role="tablist" aria-label="Конфигурации">
-        <button class="gear-tab is-active" type="button" role="tab" aria-selected="true" data-gear="main">Main Floor</button>
-        <button class="gear-tab" type="button" role="tab" aria-selected="false" data-gear="vip">VIP Booth</button>
-        <button class="gear-tab" type="button" role="tab" aria-selected="false" data-gear="console">Console</button>
-      </div>
-      <div class="gear-panel reveal" id="gearPanel">
-        <div class="gear-visual">
-          <img id="gearImg" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1000&q=80" alt="Main Floor setup" width="1000" height="700" />
-        </div>
-        <div class="gear-specs">
-          <h3 id="gearTitle">Main Floor</h3>
-          <dl id="gearList"></dl>
-          <a class="btn btn-outline" href="#book" data-zone="Main Floor" id="gearBook">Бронь этой зоны</a>
-        </div>
-      </div>
-    </section>
-
     <section class="why">
-      <div class="why-copy reveal">
+      <div class="why-copy">
         <h2>Почему RAID</h2>
-        <p>Не сеть на всю страну — один сильный зал в Москве. Фокус на железе, чистоте и быстрой брони.</p>
+        <p>Не сеть на всю страну — один сильный зал в Москве. Фокус на железе, чистоте и быстрой брони без приложений-квестов.</p>
         <ul class="why-list">
           <li>
             <strong>Онлайн-запись</strong>
-            <span>Место + слот + сумма до отправки заявки</span>
+            <span>Выбрал зону и время — место твоё</span>
           </li>
           <li>
             <strong>Турнирные мониторы</strong>
@@ -254,51 +167,18 @@
           </li>
         </ul>
       </div>
-      <div class="why-photo reveal">
+      <div class="why-photo">
         <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1000&q=80" alt="Геймер за ПК в наушниках" width="1000" height="1200" loading="lazy" />
       </div>
     </section>
 
-    <section id="events" class="events">
-      <div class="section-head reveal">
-        <h2>Ближайшие ивенты</h2>
-        <p>Мини-турниры в клубе. Можно прийти поиграть или просто посмотреть.</p>
-      </div>
-      <div class="event-list reveal">
-        <article class="event">
-          <time datetime="2026-09-20">20 сен</time>
-          <div>
-            <h3>CS2 · 5×5 Cup</h3>
-            <p>Призовой фонд 15 000 ₽ · старт 19:00</p>
-          </div>
-          <span class="event-tag">Открыто</span>
-        </article>
-        <article class="event">
-          <time datetime="2026-09-22">22 сен</time>
-          <div>
-            <h3>Dota 2 · Party Night</h3>
-            <p>Катки с резидентами · без взноса</p>
-          </div>
-          <span class="event-tag">Free</span>
-        </article>
-        <article class="event">
-          <time datetime="2026-09-27">27 сен</time>
-          <div>
-            <h3>FIFA · Console Derby</h3>
-            <p>PS5 · регистрация на стойке</p>
-          </div>
-          <span class="event-tag">Скоро</span>
-        </article>
-      </div>
-    </section>
-
     <section id="rates" class="rates">
-      <div class="section-head reveal">
+      <div class="section-head">
         <h2>Тарифы</h2>
         <p>Цены за час. Ночной пакет — с 00:00 до 08:00 на любой ПК.</p>
       </div>
       <div class="rate-cards">
-        <article class="rate-card reveal">
+        <article class="rate-card">
           <p class="rate-tag">Стандарт</p>
           <h3>Main Floor</h3>
           <p class="rate-price"><b>180</b> ₽<i>/час</i></p>
@@ -310,7 +190,7 @@
           </ul>
           <a class="btn btn-outline" href="#book" data-zone="Main Floor">Выбрать</a>
         </article>
-        <article class="rate-card rate-card-hot reveal">
+        <article class="rate-card rate-card-hot">
           <p class="rate-tag">Хит</p>
           <h3>VIP Booth</h3>
           <p class="rate-price"><b>320</b> ₽<i>/час</i></p>
@@ -322,7 +202,7 @@
           </ul>
           <a class="btn btn-accent" href="#book" data-zone="VIP Booth">Выбрать</a>
         </article>
-        <article class="rate-card reveal">
+        <article class="rate-card">
           <p class="rate-tag">Консоль</p>
           <h3>Console</h3>
           <p class="rate-price"><b>220</b> ₽<i>/час</i></p>
@@ -334,7 +214,7 @@
           </ul>
           <a class="btn btn-outline" href="#book" data-zone="Console Lounge">Выбрать</a>
         </article>
-        <article class="rate-card rate-card-night reveal">
+        <article class="rate-card rate-card-night">
           <p class="rate-tag">Пакет</p>
           <h3>Night Raid</h3>
           <p class="rate-price"><b>990</b> ₽<i>/ночь</i></p>
@@ -350,19 +230,16 @@
     </section>
 
     <section id="book" class="book">
-      <div class="book-side reveal">
+      <div class="book-side">
         <h2>Забронировать место</h2>
         <p>Оставь заявку — администратор подтвердит слот в Telegram за пару минут.</p>
-        <div class="book-summary" id="bookSummary">
-          <p>Пока без выбора места — можно указать зону вручную или кликнуть на схеме выше.</p>
-        </div>
         <div class="book-meta">
           <p><strong>Адрес</strong><span>Москва, Ленинградский пр-т, демо</span></p>
           <p><strong>Часы</strong><span>круглосуточно</span></p>
           <p><strong>Связь</strong><span><a href="https://t.me/life_slow" target="_blank" rel="noopener">@life_slow</a></span></p>
         </div>
       </div>
-      <form class="book-form reveal" id="bookForm" novalidate>
+      <form class="book-form" id="bookForm" novalidate>
         <label>
           <span>Имя</span>
           <input type="text" name="name" required placeholder="Как к тебе обращаться" autocomplete="name" />
@@ -381,20 +258,16 @@
           </select>
         </label>
         <label>
-          <span>Место</span>
-          <input type="text" name="seat" id="seatInput" readonly placeholder="Кликни на схеме" />
-        </label>
-        <label>
           <span>Дата</span>
           <input type="date" name="date" required />
         </label>
         <label>
           <span>Время</span>
-          <input type="time" name="time" id="timeInput" required value="18:00" />
+          <input type="time" name="time" required value="18:00" />
         </label>
         <label>
           <span>Часов</span>
-          <select name="hours" id="hoursSelect" required>
+          <select name="hours" required>
             <option value="1">1 час</option>
             <option value="2" selected>2 часа</option>
             <option value="3">3 часа</option>
@@ -402,34 +275,9 @@
             <option value="night">Вся ночь</option>
           </select>
         </label>
-        <div class="form-total">К оплате на месте: <strong id="formTotal">360 ₽</strong></div>
-        <button class="btn btn-accent btn-lg btn-block magnetic" type="submit">Отправить заявку</button>
+        <button class="btn btn-accent btn-lg btn-block" type="submit">Отправить заявку</button>
         <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
       </form>
-    </section>
-
-    <section class="faq">
-      <div class="section-head reveal">
-        <h2>Вопросы</h2>
-      </div>
-      <div class="faq-list reveal">
-        <details>
-          <summary>Нужен ли паспорт?</summary>
-          <p>Да, с 14 лет. До 18 — согласие родителей или присутствие взрослого.</p>
-        </details>
-        <details>
-          <summary>Можно со своим аккаунтом Steam?</summary>
-          <p>Да. На ПК стоит Steam, Faceit, Riot, Battle.net. Свой аккаунт — твои скины.</p>
-        </details>
-        <details>
-          <summary>Как отменить бронь?</summary>
-          <p>Напиши в Telegram минимум за час до слота — место освободим без штрафа.</p>
-        </details>
-        <details>
-          <summary>Есть еда?</summary>
-          <p>Бар с энергетиками и снеками. Можно приносить свою еду без запаха.</p>
-        </details>
-      </div>
     </section>
   </main>
 
@@ -439,21 +287,12 @@
       <p>Демо-кейс для портфолио TUMBLER. Не действующий клуб и не сеть COLIZEUM.</p>
     </div>
     <div class="footer-links">
-      <a href="#map">Места</a>
       <a href="#rates">Тарифы</a>
       <a href="#book">Бронь</a>
       <a href="https://t.me/life_slow" target="_blank" rel="noopener">Telegram</a>
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox-close" aria-label="Закрыть">×</button>
-    <img alt="" />
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
