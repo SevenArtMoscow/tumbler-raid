@@ -3,127 +3,259 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RAID — компьютерный клуб · запись на ПК</title>
-  <meta name="description" content="RAID — 24 станции, бронь по минутам. Москва. Демо-кейс TUMBLER." />
+  <title>RAID Arena — киберспортивный клуб в Москве</title>
+  <meta name="description" content="RAID Arena — компьютерный клуб в Москве. 24 ПК, VIP, консоли. Бронь онлайн. Демо-кейс TUMBLER." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..125,500;700;800;900&family=Fragment+Mono:wght@400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip" href="#book">К записи</a>
+  <a class="skip" href="#book">К бронированию</a>
 
-  <div class="noise" aria-hidden="true"></div>
-  <canvas id="field" aria-hidden="true"></canvas>
-
-  <header class="top">
-    <a class="logo" href="#">RAID</a>
+  <header class="header">
+    <a class="logo" href="#">
+      <span class="logo-mark" aria-hidden="true"></span>
+      RAID
+    </a>
     <nav class="nav" aria-label="Основная">
-      <a href="#board">Табло</a>
-      <a href="#floor">Зал</a>
+      <a href="#zones">Зоны</a>
+      <a href="#hall">Зал</a>
       <a href="#rates">Тарифы</a>
+      <a href="#book">Бронь</a>
     </nav>
-    <a class="btn btn-sm" href="#book">Запись</a>
+    <a class="btn btn-accent" href="#book">Забронировать</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
   </header>
 
+  <div class="mobile-nav" hidden>
+    <a href="#zones">Зоны</a>
+    <a href="#hall">Зал</a>
+    <a href="#rates">Тарифы</a>
+    <a href="#book">Бронь</a>
+  </div>
+
   <main>
-    <section class="hero" aria-label="Главный экран">
-      <div class="hero-heat" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="logo hero-brand">RAID</p>
-        <h1>Двадцать четыре<br />станции. Ноль очередей.</h1>
-        <p class="lede">Компьютерный клуб с живым табло свободных ПК. Выбираешь станцию — бронируешь слот — приходишь играть.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#book">Записаться на ПК</a>
-          <a class="link-quiet" href="#floor">Схема зала</a>
-        </div>
+    <section class="hero">
+      <div class="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1920&q=80"
+          alt="Игроки за мониторами в киберспортивном зале"
+          width="1920"
+          height="1080"
+        />
+        <div class="hero-veil"></div>
       </div>
-      <aside class="hero-board" aria-label="Свободно сейчас">
-        <div class="board-head">
-          <span class="board-live"></span>
-          <span>LIVE · FREE</span>
+      <div class="hero-inner">
+        <p class="hero-kicker">Москва · м. Сокол</p>
+        <h1>Игра начинается<br />в <span>RAID Arena</span></h1>
+        <p class="hero-lead">Киберспортивный клуб с топовым железом, быстрым интернетом и онлайн-бронью места. Приходи один или с командой.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent btn-lg" href="#book">Забронировать ПК</a>
+          <a class="btn btn-ghost btn-lg" href="#hall">Смотреть зал</a>
         </div>
-        <p class="board-count" id="freeCount">18</p>
-        <p class="board-label">станций свободно</p>
-        <ul class="board-ticker" id="ticker" aria-hidden="true"></ul>
-      </aside>
-    </section>
-
-    <section class="strip" aria-hidden="true">
-      <div class="marquee">
-        <span>PC · CONSOLE · VIP · TOURNAMENT · PC · CONSOLE · VIP · TOURNAMENT · </span>
-        <span>PC · CONSOLE · VIP · TOURNAMENT · PC · CONSOLE · VIP · TOURNAMENT · </span>
       </div>
     </section>
 
-    <section id="board" class="solari">
+    <section class="stats" aria-label="Цифры клуба">
+      <div class="stat">
+        <strong>24</strong>
+        <span>игровых станций</span>
+      </div>
+      <div class="stat">
+        <strong>1 Гбит</strong>
+        <span>канал в зал</span>
+      </div>
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>работаем без выходных</span>
+      </div>
+      <div class="stat">
+        <strong>RTX 40</strong>
+        <span>серия на всех ПК</span>
+      </div>
+    </section>
+
+    <section id="zones" class="zones">
       <div class="section-head">
-        <h2>Табло станций</h2>
-        <p>Как в аэропорту — только вместо рейсов твой слот. Зелёный = свободен, красный = занят.</p>
+        <h2>Зоны клуба</h2>
+        <p>Выбери формат под задачу — от соло-рейда до приватной кабинны.</p>
       </div>
-      <div class="flaps" id="flaps" role="list"></div>
+      <div class="zone-grid">
+        <article class="zone">
+          <div class="zone-photo">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80" alt="Основной зал с игровыми ПК" width="900" height="600" loading="lazy" />
+          </div>
+          <div class="zone-body">
+            <h3>Main Floor</h3>
+            <p>16 станций в общем зале. RTX 4070, 240 Гц, механика. Идеально для CS2, Dota, Valorant.</p>
+            <ul>
+              <li>от 180 ₽/час</li>
+              <li>16 мест</li>
+            </ul>
+          </div>
+        </article>
+        <article class="zone">
+          <div class="zone-photo">
+            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80" alt="VIP-зона компьютерного клуба" width="900" height="600" loading="lazy" />
+          </div>
+          <div class="zone-body">
+            <h3>VIP Booth</h3>
+            <p>4 закрытые кабины. RTX 4080, наушники HyperX, диван и розетки для команды.</p>
+            <ul>
+              <li>от 320 ₽/час</li>
+              <li>4 кабины</li>
+            </ul>
+          </div>
+        </article>
+        <article class="zone">
+          <div class="zone-photo">
+            <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=900&q=80" alt="Игровая консоль и геймпад" width="900" height="600" loading="lazy" />
+          </div>
+          <div class="zone-body">
+            <h3>Console Lounge</h3>
+            <p>PS5 и Xbox Series X на большом ТВ. FIFA, Fight Night, кооператив с друзьями.</p>
+            <ul>
+              <li>от 220 ₽/час</li>
+              <li>4 места</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="floor" class="floor">
-      <div class="floor-copy">
-        <h2>Схема зала</h2>
-        <p>Кликни станцию — она попадёт в форму записи. VIP-ряд у стены, обычные — в центре, console — у окна.</p>
-        <div class="legend">
-          <span><i class="dot free"></i> Свободно</span>
-          <span><i class="dot busy"></i> Занято</span>
-          <span><i class="dot vip"></i> VIP</span>
-          <span><i class="dot selected"></i> Выбрано</span>
-        </div>
+    <section id="hall" class="hall">
+      <div class="section-head">
+        <h2>Как выглядит зал</h2>
+        <p>Реальные кадры атмосферы киберклуба — так примерно выглядит RAID Arena.</p>
       </div>
-      <div class="grid-wrap">
-        <div class="station-grid" id="stationGrid" role="listbox" aria-label="Станции"></div>
+      <div class="hall-mosaic">
+        <figure class="hall-big">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80" alt="Ряд игроков в киберарене" width="1400" height="900" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=800&q=80" alt="Игровой сетап крупным планом" width="800" height="600" loading="lazy" />
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80" alt="Компьютерный клуб вечером" width="800" height="600" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="why-copy">
+        <h2>Почему RAID</h2>
+        <p>Не сеть на всю страну — один сильный зал в Москве. Фокус на железе, чистоте и быстрой брони без приложений-квестов.</p>
+        <ul class="why-list">
+          <li>
+            <strong>Онлайн-запись</strong>
+            <span>Выбрал зону и время — место твоё</span>
+          </li>
+          <li>
+            <strong>Турнирные мониторы</strong>
+            <span>240–360 Гц, без размытия в Aim</span>
+          </li>
+          <li>
+            <strong>Кухня и бар</strong>
+            <span>Энергетики, снеки, можно со своей едой</span>
+          </li>
+          <li>
+            <strong>Командные слоты</strong>
+            <span>Бронь соседних ПК одним запросом</span>
+          </li>
+        </ul>
+      </div>
+      <div class="why-photo">
+        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=1000&q=80" alt="Геймер за ПК в наушниках" width="1000" height="1200" loading="lazy" />
       </div>
     </section>
 
     <section id="rates" class="rates">
       <div class="section-head">
         <h2>Тарифы</h2>
-        <p>Цена за час. Ночной пакет с 00:00 до 08:00 — дешевле.</p>
+        <p>Цены за час. Ночной пакет — с 00:00 до 08:00 на любой ПК.</p>
       </div>
-      <div class="rate-rows">
-        <div class="rate-row">
-          <span class="rate-name">Standard PC</span>
-          <span class="rate-spec">RTX 4070 · 240 Hz</span>
-          <span class="rate-price">180 ₽/ч</span>
-        </div>
-        <div class="rate-row">
-          <span class="rate-name">VIP Booth</span>
-          <span class="rate-spec">RTX 4080 · приват</span>
-          <span class="rate-price">320 ₽/ч</span>
-        </div>
-        <div class="rate-row">
-          <span class="rate-name">Console</span>
-          <span class="rate-spec">PS5 / Series X</span>
-          <span class="rate-price">220 ₽/ч</span>
-        </div>
-        <div class="rate-row night">
-          <span class="rate-name">Night Raid</span>
-          <span class="rate-spec">00:00–08:00 · любой ПК</span>
-          <span class="rate-price">990 ₽</span>
-        </div>
+      <div class="rate-cards">
+        <article class="rate-card">
+          <p class="rate-tag">Стандарт</p>
+          <h3>Main Floor</h3>
+          <p class="rate-price"><b>180</b> ₽<i>/час</i></p>
+          <ul>
+            <li>RTX 4070 / i5-13600</li>
+            <li>32 ГБ RAM · SSD</li>
+            <li>Монитор 240 Гц</li>
+            <li>Гарнитура в комплекте</li>
+          </ul>
+          <a class="btn btn-outline" href="#book" data-zone="Main Floor">Выбрать</a>
+        </article>
+        <article class="rate-card rate-card-hot">
+          <p class="rate-tag">Хит</p>
+          <h3>VIP Booth</h3>
+          <p class="rate-price"><b>320</b> ₽<i>/час</i></p>
+          <ul>
+            <li>RTX 4080 / i7-14700</li>
+            <li>Закрытая кабина</li>
+            <li>Монитор 360 Гц</li>
+            <li>Диван + доп. места</li>
+          </ul>
+          <a class="btn btn-accent" href="#book" data-zone="VIP Booth">Выбрать</a>
+        </article>
+        <article class="rate-card">
+          <p class="rate-tag">Консоль</p>
+          <h3>Console</h3>
+          <p class="rate-price"><b>220</b> ₽<i>/час</i></p>
+          <ul>
+            <li>PS5 / Xbox Series X</li>
+            <li>TV 55"</li>
+            <li>2 геймпада</li>
+            <li>Каталог игр клуба</li>
+          </ul>
+          <a class="btn btn-outline" href="#book" data-zone="Console Lounge">Выбрать</a>
+        </article>
+        <article class="rate-card rate-card-night">
+          <p class="rate-tag">Пакет</p>
+          <h3>Night Raid</h3>
+          <p class="rate-price"><b>990</b> ₽<i>/ночь</i></p>
+          <ul>
+            <li>00:00 — 08:00</li>
+            <li>Любая зона</li>
+            <li>Энергетик в подарок</li>
+            <li>Без доплаты за часы</li>
+          </ul>
+          <a class="btn btn-outline" href="#book" data-zone="Night Raid">Выбрать</a>
+        </article>
       </div>
     </section>
 
     <section id="book" class="book">
-      <div class="book-copy">
-        <h2>Запись</h2>
-        <p>Выбери станцию на схеме или укажи вручную. Мы напишем в Telegram для подтверждения.</p>
-        <p class="picked" id="pickedLabel">Станция не выбрана</p>
+      <div class="book-side">
+        <h2>Забронировать место</h2>
+        <p>Оставь заявку — администратор подтвердит слот в Telegram за пару минут.</p>
+        <div class="book-meta">
+          <p><strong>Адрес</strong><span>Москва, Ленинградский пр-т, демо</span></p>
+          <p><strong>Часы</strong><span>круглосуточно</span></p>
+          <p><strong>Связь</strong><span><a href="https://t.me/life_slow" target="_blank" rel="noopener">@life_slow</a></span></p>
+        </div>
       </div>
       <form class="book-form" id="bookForm" novalidate>
         <label>
           <span>Имя</span>
-          <input type="text" name="name" required autocomplete="name" placeholder="Как к тебе обращаться" />
+          <input type="text" name="name" required placeholder="Как к тебе обращаться" autocomplete="name" />
         </label>
         <label>
           <span>Telegram</span>
           <input type="text" name="tg" required placeholder="@username" />
+        </label>
+        <label>
+          <span>Зона</span>
+          <select name="zone" id="zoneSelect" required>
+            <option value="Main Floor">Main Floor</option>
+            <option value="VIP Booth">VIP Booth</option>
+            <option value="Console Lounge">Console Lounge</option>
+            <option value="Night Raid">Night Raid</option>
+          </select>
         </label>
         <label>
           <span>Дата</span>
@@ -140,29 +272,27 @@
             <option value="2" selected>2 часа</option>
             <option value="3">3 часа</option>
             <option value="5">5 часов</option>
-            <option value="night">Night Raid</option>
+            <option value="night">Вся ночь</option>
           </select>
         </label>
-        <label>
-          <span>Станция</span>
-          <input type="text" name="station" id="stationInput" readonly placeholder="Кликни на схеме" />
-        </label>
-        <button class="btn btn-block" type="submit">Отправить заявку</button>
+        <button class="btn btn-accent btn-lg btn-block" type="submit">Отправить заявку</button>
         <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
-  <footer class="foot">
-    <p class="logo">RAID</p>
-    <p>Демо-кейс для портфолио TUMBLER · не действующий клуб</p>
-    <a href="https://t.me/life_slow" target="_blank" rel="noopener">@life_slow</a>
+  <footer class="footer">
+    <div class="footer-brand">
+      <a class="logo" href="#">RAID</a>
+      <p>Демо-кейс для портфолио TUMBLER. Не действующий клуб и не сеть COLIZEUM.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#rates">Тарифы</a>
+      <a href="#book">Бронь</a>
+      <a href="https://t.me/life_slow" target="_blank" rel="noopener">Telegram</a>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
